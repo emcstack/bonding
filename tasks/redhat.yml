@@ -1,0 +1,18 @@
+---
+# tasks file for bonding
+
+- name: Create the slave interfaces configuration files
+  template: src=rh_ifcfg-slaves.j2 dest="{{ rh_network_sysconfig }}/ifcfg-{{ item }}"
+  with_items:
+  - "{{ slaves }}"
+  tags:
+  - rh
+  - bond
+
+- name: Create the bonding iface
+  template: src=rh_ifcfg-bond.j2 dest="{{ rh_network_sysconfig }}/ifcfg-{{ item }}"
+  with_items:
+  - "{{ bond }}"
+  tags:
+  - rh
+  - bond
