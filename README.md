@@ -41,4 +41,3 @@ Author Information
 ------------------
 
 John Preston [John Mille]
-

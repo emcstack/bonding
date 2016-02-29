@@ -1,7 +1,12 @@
 ---
-# defaults file for .
+# defaults file for bonding
 
-rh_network_sysconfig: /tmp/
+# Set to true to apply to sysconfig files
+apply: false
+
+el_network_sysconfig: /etc/sysconfig-network-scripts
+tmp_dir: /tmp
+
 
 # Bonding options
 # More information on https://www.kernel.org/doc/Documentation/networking/bonding.txt
@@ -20,8 +25,8 @@ mtu: 1500
 # Bonding IP settings
 
 enable_ipv4: false
-manage_gateway: true
-manage_dns_servers: true
+manage_gateway: false
+manage_dns_servers: false
 ip_addr:
 netmask:
 gateway:
