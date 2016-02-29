@@ -6,10 +6,10 @@ ONBOOT=yes
 SLAVE=yes
 MASTER="{{ bond }}"
 MTU="{{ mtu }}"
-HWADDR="{{ hostvars[ansible_hostname][iface].macaddress }}"
+HWADDR="{{ hostvars[inventory_hostname][iface].macaddress }}"
 {% if keep_slave_ipv4 %}
-{% if hostvars[ansible_hostname][iface].ipv4 %}
-IPADDR="{{ hostvars[ansible_hostname][iface].ipv4.address }}"
-NETMASK="{{ hostvars[ansible_hostname][iface].ipv4.netmask }}"
+{% if hostvars[inventory_hostname][iface].ipv4 %}
+IPADDR="{{ hostvars[inventory_hostname][iface].ipv4.address }}"
+NETMASK="{{ hostvars[inventory_hostname][iface].ipv4.netmask }}"
 {% endif %}
 {% endif %}
