@@ -17,7 +17,7 @@
   - "{{ bond }}"
   when:
   - apply
-  - "{{ slaves | length }}" >=2
+  - ("{{ slaves| length }}" >=2)
   tags:
   - el
   - bond
@@ -38,7 +38,7 @@
   - "{{ bond }}"
   when:
   - not apply
-  - "{{ slaves | length }}" >=2
+  - ("{{ slaves|length }}" >=2)
   tags:
   - el
   - bond
