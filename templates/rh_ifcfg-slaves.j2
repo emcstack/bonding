@@ -6,7 +6,9 @@ ONBOOT=yes
 SLAVE=yes
 MASTER="{{ bond }}"
 MTU="{{ mtu }}"
+{% if keep_slave_hwaddr %}
 HWADDR="{{ hostvars[inventory_hostname][iface].macaddress }}"
+{% endif %}
 {% if keep_slave_ipv4 %}
 {% if hostvars[inventory_hostname][iface].ipv4 %}
 IPADDR="{{ hostvars[inventory_hostname][iface].ipv4.address }}"
