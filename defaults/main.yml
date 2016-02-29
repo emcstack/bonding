@@ -37,3 +37,4 @@ ipv6_autoconf: no
 # Slaves options
 
 keep_slave_ipv4: false
+keep_slave_hwaddr: true
