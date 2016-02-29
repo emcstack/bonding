@@ -4,7 +4,7 @@ DEVICE="{{ item }}"
 BOOTPROTO=none
 ONBOOT=yes
 SLAVE=yes
-MASTER={{ bond }}"
+MASTER="{{ bond }}"
 MTU="{{ mtu }}"
 HWADDR="{{ hostvars[ansible_hostname][iface].macaddress }}"
 {% if keep_slave_ipv4 %}
