@@ -8,7 +8,9 @@ NOZEROCONF=yes
 {%if enable_ipv4 %}
 IPADDR="{{ ip_addr }}"
 NETMASK="{{ netmask }}"
+{%if manage_gateway %}
 GATEWAY="{{ gateway }}"
+{% endif %}
 DNS1="{{ dns1 }}"
 DNS2="{{ dns2 }}"
 {% endif %}

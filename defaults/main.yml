@@ -20,6 +20,7 @@ mtu: 1500
 # Bonding IP settings
 
 enable_ipv4: false
+manage_gateway: true
 ip_addr:
 netmask:
 gateway:
