@@ -11,8 +11,10 @@ NETMASK="{{ netmask }}"
 {%if manage_gateway %}
 GATEWAY="{{ gateway }}"
 {% endif %}
+{%if manage_dns_servers %}
 DNS1="{{ dns1 }}"
 DNS2="{{ dns2 }}"
+{% endif %}
 {% endif %}
 {% if enable_ipv6 %}
 IPV6INIT="{{ init_ipv6 }}"

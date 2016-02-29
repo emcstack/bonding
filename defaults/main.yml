@@ -21,6 +21,7 @@ mtu: 1500
 
 enable_ipv4: false
 manage_gateway: true
+manage_dns_servers: true
 ip_addr:
 netmask:
 gateway:
