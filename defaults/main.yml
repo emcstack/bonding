@@ -4,6 +4,9 @@
 # Set to true to apply to sysconfig files
 apply: false
 
+# Set to true to restart network service after files creation
+apply_now: false
+
 el_network_sysconfig: /etc/sysconfig/network-scripts
 tmp_dir: /tmp
 
