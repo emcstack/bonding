@@ -6,8 +6,10 @@ MTU="{{ mtu }}"
 NOZEROCONF=yes
 
 {%if enable_ipv4 %}
+{% if ip_addr and netmask %}
 IPADDR="{{ ip_addr }}"
 NETMASK="{{ netmask }}"
+{% endif %}
 {%if manage_gateway %}
 GATEWAY="{{ gateway }}"
 {% endif %}
