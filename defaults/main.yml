@@ -22,7 +22,6 @@ bond_options:
 #- { 'key': '', 'value': ''}
 
 # Normal values
-
 mtu: 1500
 
 # Bonding IP settings
@@ -30,6 +29,7 @@ mtu: 1500
 enable_ipv4: false
 manage_gateway: false
 manage_dns_servers: false
+manage_hw_addr: true
 ip_addr:
 netmask:
 gateway:
