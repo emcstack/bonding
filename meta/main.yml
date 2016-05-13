@@ -1,0 +1,41 @@
+galaxy_info:
+  author: John Preston [JMille]
+  description: Bond configuration files creator
+  company:
+  license: GPLv3
+  min_ansible_version: 1.9
+
+  github_branch: master
+  platforms:
+  - name: EL
+    versions:
+    - 6
+    - 7
+  #- name: Ubuntu
+  #  versions:
+  #  - all
+  #  - lucid
+  #  - maverick
+  #  - natty
+  #  - oneiric
+  #  - precise
+  #  - quantal
+  #  - raring
+  #  - saucy
+  #  - trusty
+  #  - utopic
+  #  - vivid
+  #  - wily
+  #- name: Debian
+  #  versions:
+  #  - all
+  #  - etch
+  #  - jessie
+  #  - lenny
+  #  - squeeze
+  #  - wheezy
+  galaxy_tags:
+  - networking
+  - bonding
+
+dependencies: []

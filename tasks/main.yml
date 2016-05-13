@@ -1,0 +1,8 @@
+---
+# tasks file for bonding
+
+- name: Create configuration files
+  include: el.yml
+  when: (ansible_os_family == "CentOS") or
+        (ansible_os_family == "RedHat")
+  become: yes

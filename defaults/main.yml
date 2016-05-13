@@ -1,0 +1,47 @@
+---
+# defaults file for bonding
+
+# Set to true to apply to sysconfig files
+apply: false
+
+# Set to true to restart network service after files creation
+apply_now: false
+
+el_network_sysconfig: /etc/sysconfig/network-scripts
+tmp_dir: /tmp
+
+
+# Bonding options
+# More information on https://www.kernel.org/doc/Documentation/networking/bonding.txt
+
+bond_options:
+- { 'key': 'mode', 'value': 'lacp'}
+- { 'key': 'miimon', 'value': '80'}
+- { 'key': 'xmit_hash_policy', 'value': '2'}
+
+#- { 'key': '', 'value': ''}
+
+# Normal values
+mtu: 1500
+
+# Bonding IP settings
+
+enable_ipv4: false
+manage_gateway: false
+manage_dns_servers: false
+manage_hw_addr: true
+ip_addr:
+netmask:
+gateway:
+dns1:
+dns2:
+
+# IPv6 options
+
+enable_ipv6: true
+init_ipv6: yes
+ipv6_autoconf: no
+
+# Slaves options
+
+keep_slave_ipv4: false

@@ -1,0 +1,24 @@
+{% set iface = 'ansible_' + item %}
+NAME="{{ item }}"
+DEVICE="{{ item }}"
+BONDING_OPTS="{%for bond_option in bond_options %}{{ bond_option.key }}={{ bond_option.value}} {%endfor%}"
+MTU="{{ mtu }}"
+NOZEROCONF=yes
+
+{%if enable_ipv4 %}
+{% if ip_addr and netmask %}
+IPADDR="{{ ip_addr }}"
+NETMASK="{{ netmask }}"
+{% endif %}
+{%if manage_gateway %}
+GATEWAY="{{ gateway }}"
+{% endif %}
+{%if manage_dns_servers %}
+DNS1="{{ dns1 }}"
+DNS2="{{ dns2 }}"
+{% endif %}
+{% endif %}
+{% if enable_ipv6 %}
+IPV6INIT="{{ init_ipv6 }}"
+IPV6_AUTOCONF="{{ ipv6_autoconf }}"
+{% endif %}
