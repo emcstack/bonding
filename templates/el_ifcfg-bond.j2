@@ -4,6 +4,10 @@ DEVICE="{{ item }}"
 BONDING_OPTS="{%for bond_option in bond_options %}{{ bond_option.key }}={{ bond_option.value}} {%endfor%}"
 MTU="{{ mtu }}"
 NOZEROCONF=yes
+{%if network_manager %}
+TYPE=bond
+BONDING_MASTER=yes
+{% endif %}
 
 {%if enable_ipv4 %}
 {% if ip_addr and netmask %}
