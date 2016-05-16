@@ -23,6 +23,39 @@
   - el
   - bond
 
+
+- name: Create the slave interfaces configuration files
+  template: src=el_ifcfg-slaves.j2 dest="{{ el_network_sysconfig }}/ifcfg-{{ item }}" backup=yes
+  with_items:
+  - "{{ slaves }}"
+  when:
+  - apply
+  - network_manager
+  tags:
+  - el
+  - bond
+  - network_manager
+
+- name: Create the bonding iface
+  template: src=el_ifcfg-bond.j2 dest="{{ el_network_sysconfig }}/ifcfg-{{ item }}"
+  with_items:
+  - "{{ bond }}"
+  when:
+  - apply
+  - ("{{ slaves| length }}" >=2)
+  - network_manager
+  notify: restart NetworkManager
+  tags:
+  - el
+  - bond
+  - network_manager
+
+- name: Apply settings NOW
+  service: name=NetworkManager state=restarted
+  when:
+  - apply_now
+  - network_manager
+
 - name: Apply settings NOW
   service: name=network state=restarted
   when:

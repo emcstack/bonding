@@ -1,6 +1,9 @@
 ---
 # defaults file for bonding
 
+# Set to true if using NetworkManager
+network_manager: false
+
 # Set to true to apply to sysconfig files
 apply: false
 
